@@ -20,7 +20,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="myQProgressBar" name="u">
+      <widget class="myQProgressBar" name="PB1">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -36,7 +36,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="dos">
+      <widget class="myQProgressBar" name="PB2">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -52,7 +52,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="tres">
+      <widget class="myQProgressBar" name="PB3">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -68,7 +68,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="quatr">
+      <widget class="myQProgressBar" name="PB4">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -84,7 +84,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="cinc">
+      <widget class="myQProgressBar" name="PB5">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -100,7 +100,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="sis">
+      <widget class="myQProgressBar" name="PB6">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -116,7 +116,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="set">
+      <widget class="myQProgressBar" name="PB7">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -132,7 +132,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="vuit">
+      <widget class="myQProgressBar" name="PB8">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -148,7 +148,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="nou">
+      <widget class="myQProgressBar" name="PB9">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -164,7 +164,7 @@
       </widget>
      </item>
      <item>
-      <widget class="myQProgressBar" name="deu">
+      <widget class="myQProgressBar" name="PB10">
        <property name="minimum">
         <number>-100</number>
        </property>
