@@ -9,6 +9,8 @@ class Sinus : public QWidget
       Sinus(QWidget *parent = 0);
 
     public slots:
+      void setBars();
+      void setProgressBarValue(int index, int value);
 
     private:
       Ui::Sinus ui;
