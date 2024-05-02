@@ -1,52 +1,36 @@
 #include "Sinus.h"
 #include <cmath>
+#include <QShortcut>
+#include <iostream>
+
+float A = 0.5f;
 
 Sinus::Sinus(QWidget *parent) : QWidget(parent) 
 {
   ui.setupUi(this);
+  QShortcut *shortcut = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_I), this);
+  connect(shortcut, &QShortcut::activated, this, &Sinus::setBars);
 
 }
 
 void Sinus::setBars() {
-  for (int i = 1; i <= 10; i++) {
-    setProgressBarValue(i, 50 + 50 * sin(i));
+  for (int x= 0; x <= 9; x++) {
+    setProgressBarValue(x + 1, A * sin(x) * 100);
   }
 }
 
-
 void Sinus::setProgressBarValue(int index, int value) {
-    switch(index) {
-        case 1:
-            ui.PB1->setValue(value);
-            break;
-        case 2:
-            ui.PB2->setValue(value);
-            break;
-        case 3:
-            ui.PB3->setValue(value);
-            break;
-        case 4:
-            ui.PB4->setValue(value);
-            break;
-        case 5:
-            ui.PB5->setValue(value);
-            break;
-        case 6:
-            ui.PB6->setValue(value);
-            break;
-        case 7:
-            ui.PB7->setValue(value);
-            break; 
-        case 8:
-            ui.PB8->setValue(value);
-            break;
-        case 9:
-            ui.PB9->setValue(value);
-            break;
-        case 10:
-            ui.PB10->setValue(value);
-            break;      
-        default:
-            break;
+    QList<QProgressBar*> progressBars = { ui.PB1, ui.PB2, ui.PB3, ui.PB4, ui.PB5,
+                                          ui.PB6, ui.PB7, ui.PB8, ui.PB9, ui.PB10 };
+    if (index >= 1 && index <= progressBars.size()) {
+        progressBars[index - 1]->setValue(value);
     }
+}
+
+
+
+void Sinus::setAmplitude() {
+  A = (ui.Amplitude->value())/100.0f;
+  std::cerr << A << std::endl;
+  setBars();
 }

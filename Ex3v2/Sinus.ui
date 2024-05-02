@@ -179,6 +179,19 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QSlider" name="Amplitude">
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -193,6 +206,29 @@
        </property>
        <property name="text">
         <string>Inici</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Fase:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox">
+       <property name="minimum">
+        <double>-5.000000000000000</double>
+       </property>
+       <property name="maximum">
+        <double>5.000000000000000</double>
+       </property>
+       <property name="singleStep">
+        <double>0.200000000000000</double>
        </property>
       </widget>
      </item>
@@ -247,8 +283,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>342</x>
-     <y>272</y>
+     <x>527</x>
+     <y>414</y>
     </hint>
     <hint type="destinationlabel">
      <x>361</x>
@@ -256,9 +292,42 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>Inici</sender>
+   <signal>clicked()</signal>
+   <receiver>Sinus</receiver>
+   <slot>setBars()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>179</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Amplitude</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>Sinus</receiver>
+   <slot>setAmplitude()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>488</x>
+     <y>179</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>start_stop()</slot>
-  <slot>reset()</slot>
+  <slot>setProgressBarValue()</slot>
+  <slot>setBars()</slot>
+  <slot>setAmplitude()</slot>
  </slots>
 </ui>
