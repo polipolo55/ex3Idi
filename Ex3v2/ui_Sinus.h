@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'Sinus.ui'
 **
-** Created by: Qt User Interface Compiler version 5.15.3
+** Created by: Qt User Interface Compiler version 5.15.13
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -42,7 +42,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QPushButton *Inici;
     QLabel *label;
-    QDoubleSpinBox *doubleSpinBox;
+    QDoubleSpinBox *Fase;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton;
@@ -61,7 +61,7 @@ public:
         PB1->setObjectName(QString::fromUtf8("PB1"));
         PB1->setMinimum(-100);
         PB1->setValue(0);
-        PB1->setOrientation(Qt::Vertical);
+        PB1->setOrientation(Qt::Orientation::Vertical);
         PB1->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB1);
@@ -70,7 +70,7 @@ public:
         PB2->setObjectName(QString::fromUtf8("PB2"));
         PB2->setMinimum(-100);
         PB2->setValue(0);
-        PB2->setOrientation(Qt::Vertical);
+        PB2->setOrientation(Qt::Orientation::Vertical);
         PB2->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB2);
@@ -79,7 +79,7 @@ public:
         PB3->setObjectName(QString::fromUtf8("PB3"));
         PB3->setMinimum(-100);
         PB3->setValue(0);
-        PB3->setOrientation(Qt::Vertical);
+        PB3->setOrientation(Qt::Orientation::Vertical);
         PB3->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB3);
@@ -88,7 +88,7 @@ public:
         PB4->setObjectName(QString::fromUtf8("PB4"));
         PB4->setMinimum(-100);
         PB4->setValue(0);
-        PB4->setOrientation(Qt::Vertical);
+        PB4->setOrientation(Qt::Orientation::Vertical);
         PB4->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB4);
@@ -97,7 +97,7 @@ public:
         PB5->setObjectName(QString::fromUtf8("PB5"));
         PB5->setMinimum(-100);
         PB5->setValue(0);
-        PB5->setOrientation(Qt::Vertical);
+        PB5->setOrientation(Qt::Orientation::Vertical);
         PB5->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB5);
@@ -106,7 +106,7 @@ public:
         PB6->setObjectName(QString::fromUtf8("PB6"));
         PB6->setMinimum(-100);
         PB6->setValue(0);
-        PB6->setOrientation(Qt::Vertical);
+        PB6->setOrientation(Qt::Orientation::Vertical);
         PB6->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB6);
@@ -115,7 +115,7 @@ public:
         PB7->setObjectName(QString::fromUtf8("PB7"));
         PB7->setMinimum(-100);
         PB7->setValue(0);
-        PB7->setOrientation(Qt::Vertical);
+        PB7->setOrientation(Qt::Orientation::Vertical);
         PB7->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB7);
@@ -124,7 +124,7 @@ public:
         PB8->setObjectName(QString::fromUtf8("PB8"));
         PB8->setMinimum(-100);
         PB8->setValue(0);
-        PB8->setOrientation(Qt::Vertical);
+        PB8->setOrientation(Qt::Orientation::Vertical);
         PB8->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB8);
@@ -133,7 +133,7 @@ public:
         PB9->setObjectName(QString::fromUtf8("PB9"));
         PB9->setMinimum(-100);
         PB9->setValue(0);
-        PB9->setOrientation(Qt::Vertical);
+        PB9->setOrientation(Qt::Orientation::Vertical);
         PB9->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB9);
@@ -142,7 +142,7 @@ public:
         PB10->setObjectName(QString::fromUtf8("PB10"));
         PB10->setMinimum(-100);
         PB10->setValue(0);
-        PB10->setOrientation(Qt::Vertical);
+        PB10->setOrientation(Qt::Orientation::Vertical);
         PB10->setInvertedAppearance(false);
 
         horizontalLayout_2->addWidget(PB10);
@@ -151,7 +151,7 @@ public:
         Amplitude->setObjectName(QString::fromUtf8("Amplitude"));
         Amplitude->setMaximum(100);
         Amplitude->setValue(50);
-        Amplitude->setOrientation(Qt::Vertical);
+        Amplitude->setOrientation(Qt::Orientation::Vertical);
 
         horizontalLayout_2->addWidget(Amplitude);
 
@@ -169,17 +169,17 @@ public:
 
         label = new QLabel(Sinus);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        label->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
 
         horizontalLayout_3->addWidget(label);
 
-        doubleSpinBox = new QDoubleSpinBox(Sinus);
-        doubleSpinBox->setObjectName(QString::fromUtf8("doubleSpinBox"));
-        doubleSpinBox->setMinimum(-5.000000000000000);
-        doubleSpinBox->setMaximum(5.000000000000000);
-        doubleSpinBox->setSingleStep(0.200000000000000);
+        Fase = new QDoubleSpinBox(Sinus);
+        Fase->setObjectName(QString::fromUtf8("Fase"));
+        Fase->setMinimum(-5.000000000000000);
+        Fase->setMaximum(5.000000000000000);
+        Fase->setSingleStep(0.200000000000000);
 
-        horizontalLayout_3->addWidget(doubleSpinBox);
+        horizontalLayout_3->addWidget(Fase);
 
 
         verticalLayout->addLayout(horizontalLayout_3);
@@ -205,6 +205,7 @@ public:
         QObject::connect(pushButton, SIGNAL(clicked()), Sinus, SLOT(close()));
         QObject::connect(Inici, SIGNAL(clicked()), Sinus, SLOT(setBars()));
         QObject::connect(Amplitude, SIGNAL(sliderMoved(int)), Sinus, SLOT(setAmplitude()));
+        QObject::connect(Fase, SIGNAL(valueChanged(double)), Sinus, SLOT(setFase()));
 
         QMetaObject::connectSlotsByName(Sinus);
     } // setupUi

@@ -28,7 +28,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -44,7 +44,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -60,7 +60,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -76,7 +76,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -92,7 +92,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -108,7 +108,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -124,7 +124,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -140,7 +140,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -156,7 +156,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -172,7 +172,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -188,7 +188,7 @@
         <number>50</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
       </widget>
      </item>
@@ -215,12 +215,12 @@
         <string>Fase:</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="doubleSpinBox">
+      <widget class="QDoubleSpinBox" name="Fase">
        <property name="minimum">
         <double>-5.000000000000000</double>
        </property>
@@ -239,7 +239,7 @@
      <item>
       <spacer name="horizontalSpacer">
        <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+        <enum>Qt::Orientation::Horizontal</enum>
        </property>
        <property name="sizeHint" stdset="0">
         <size>
@@ -300,7 +300,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>179</x>
-     <y>383</y>
+     <y>379</y>
     </hint>
     <hint type="destinationlabel">
      <x>268</x>
@@ -315,8 +315,24 @@
    <slot>setAmplitude()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>488</x>
-     <y>179</y>
+     <x>509</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>268</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Fase</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Sinus</receiver>
+   <slot>setFase()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>443</x>
+     <y>367</y>
     </hint>
     <hint type="destinationlabel">
      <x>268</x>
@@ -329,5 +345,6 @@
   <slot>setProgressBarValue()</slot>
   <slot>setBars()</slot>
   <slot>setAmplitude()</slot>
+  <slot>setFase()</slot>
  </slots>
 </ui>

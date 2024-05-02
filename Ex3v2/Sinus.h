@@ -12,6 +12,7 @@ class Sinus : public QWidget
       void setBars();
       void setProgressBarValue(int index, int value);
       void setAmplitude();
+      void setFase();
 
 
     private:

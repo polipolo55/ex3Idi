@@ -4,6 +4,7 @@
 #include <iostream>
 
 float A = 0.5f;
+float B = 0.0f;
 
 Sinus::Sinus(QWidget *parent) : QWidget(parent) 
 {
@@ -15,7 +16,7 @@ Sinus::Sinus(QWidget *parent) : QWidget(parent)
 
 void Sinus::setBars() {
   for (int x= 0; x <= 9; x++) {
-    setProgressBarValue(x + 1, A * sin(x) * 100);
+    setProgressBarValue(x + 1, A * sin(x + B) * 100);
   }
 }
 
@@ -31,6 +32,11 @@ void Sinus::setProgressBarValue(int index, int value) {
 
 void Sinus::setAmplitude() {
   A = (ui.Amplitude->value())/100.0f;
-  std::cerr << A << std::endl;
   setBars();
+}
+
+
+void Sinus::setFase() {
+    B = (ui.Fase->value());
+    setBars();
 }
