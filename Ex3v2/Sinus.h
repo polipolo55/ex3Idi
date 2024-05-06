@@ -1,4 +1,5 @@
 #include "ui_Sinus.h"
+#include <QTimer>
 
 
 class Sinus : public QWidget 
@@ -13,8 +14,17 @@ class Sinus : public QWidget
       void setProgressBarValue(int index, int value);
       void setAmplitude();
       void setFase();
+      void start();
+      void startTimer();
 
 
     private:
       Ui::Sinus ui;
+      QTimer *timer;
+      
+      float A = 0.5f;
+      float B = 0.0f;
+      int i = 0;
+      bool started = false;
+      bool timerStarted = false;
 };

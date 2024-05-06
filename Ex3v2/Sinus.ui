@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>538</width>
-    <height>425</height>
+    <width>1182</width>
+    <height>648</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="myQProgressBar" name="PB1">
+      <widget class="QProgressBar" name="PB1">
        <property name="minimum">
         <number>-100</number>
        </property>
@@ -28,10 +28,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
-       </property>
-       <property name="invertedAppearance">
-        <bool>false</bool>
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
@@ -44,7 +41,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -60,7 +57,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -76,7 +73,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -92,7 +89,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -108,7 +105,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -124,7 +121,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -140,7 +137,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -156,7 +153,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -172,7 +169,7 @@
         <number>0</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
        <property name="invertedAppearance">
         <bool>false</bool>
@@ -188,7 +185,7 @@
         <number>50</number>
        </property>
        <property name="orientation">
-        <enum>Qt::Orientation::Vertical</enum>
+        <enum>Qt::Vertical</enum>
        </property>
       </widget>
      </item>
@@ -210,12 +207,19 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="TimerButton">
+       <property name="text">
+        <string>Timer</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Fase:</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
       </widget>
      </item>
@@ -238,9 +242,6 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>268</width>
@@ -283,8 +284,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>527</x>
-     <y>414</y>
+     <x>1171</x>
+     <y>637</y>
     </hint>
     <hint type="destinationlabel">
      <x>361</x>
@@ -296,11 +297,11 @@
    <sender>Inici</sender>
    <signal>clicked()</signal>
    <receiver>Sinus</receiver>
-   <slot>setBars()</slot>
+   <slot>start()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>179</x>
-     <y>379</y>
+     <x>191</x>
+     <y>606</y>
     </hint>
     <hint type="destinationlabel">
      <x>268</x>
@@ -315,8 +316,8 @@
    <slot>setAmplitude()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>509</x>
-     <y>185</y>
+     <x>1093</x>
+     <y>89</y>
     </hint>
     <hint type="destinationlabel">
      <x>268</x>
@@ -331,12 +332,28 @@
    <slot>setFase()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>443</x>
-     <y>367</y>
+     <x>1171</x>
+     <y>604</y>
     </hint>
     <hint type="destinationlabel">
      <x>268</x>
      <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>TimerButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Sinus</receiver>
+   <slot>startTimer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>446</x>
+     <y>595</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>590</x>
+     <y>323</y>
     </hint>
    </hints>
   </connection>
@@ -346,5 +363,7 @@
   <slot>setBars()</slot>
   <slot>setAmplitude()</slot>
   <slot>setFase()</slot>
+  <slot>start()</slot>
+  <slot>startTimer()</slot>
  </slots>
 </ui>

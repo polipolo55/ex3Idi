@@ -3,20 +3,30 @@
 #include <QShortcut>
 #include <iostream>
 
-float A = 0.5f;
-float B = 0.0f;
 
 Sinus::Sinus(QWidget *parent) : QWidget(parent) 
 {
   ui.setupUi(this);
   QShortcut *shortcut = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_I), this);
-  connect(shortcut, &QShortcut::activated, this, &Sinus::setBars);
+  connect(shortcut, &QShortcut::activated, this, &Sinus::start);
+  QShortcut *shortcut2 = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_T), this);
+  connect(shortcut2, &QShortcut::activated, this, &Sinus::startTimer);
+  QShortcut *shortcut3 = new QShortcut(QKeySequence(Qt::ALT + Qt::Key_S), this);
+  connect(shortcut3, &QShortcut::activated, this, &Sinus::close);
+
+  timer = new QTimer(this);
+  timer->setInterval(100);  
+
+    connect(timer, &QTimer::timeout, this, [&]() {
+      i++;
+      setBars();
+    });
 
 }
-
 void Sinus::setBars() {
+  if (!started) return;
   for (int x= 0; x <= 9; x++) {
-    setProgressBarValue(x + 1, A * sin(x + B) * 100);
+    setProgressBarValue(x + 1, A * sin(x + B + i) * 100);
   }
 }
 
@@ -37,6 +47,26 @@ void Sinus::setAmplitude() {
 
 
 void Sinus::setFase() {
-    B = (ui.Fase->value());
-    setBars();
+  B = (ui.Fase->value());
+  setBars();
 }
+
+
+void Sinus::start() {
+  if (!started) {
+    started = true;
+    setBars();
+  }
+}
+
+void Sinus::startTimer() {
+  if (started and !timerStarted) {
+    timer->start();
+    timerStarted = true;
+  }
+  else if (timerStarted and started) {
+    timer->stop();
+    timerStarted = false;
+  }
+}
+
